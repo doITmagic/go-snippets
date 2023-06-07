@@ -58,6 +58,7 @@ func merge(in ...<-chan int) <-chan int {
 
 func main() {
 	fmt.Println("Start Fan Out ")
+
 	// Producer : Fan Out
 	c1 := generator(1, 2, 3)
 	c2 := generator(4, 5, 6)
