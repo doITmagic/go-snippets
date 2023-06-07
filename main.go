@@ -5,6 +5,7 @@ import (
 	"os"
 	"time"
 
+	"github.com/doITmagic/go-snippets/hashtable"
 	"github.com/doITmagic/go-snippets/logger"
 )
 
@@ -17,5 +18,17 @@ func main() {
 		myLogger.Log(fmt.Sprintf("Hello %d", i))
 		time.Sleep(100 * time.Millisecond)
 	}
+
+	//using hashtable package
+	testHashTable := hashtable.InitHashTable()
+	testHashTable.Insert("test")
+	testHashTable.Insert("test1")
+	testHashTable.Insert("test1")
+	testHashTable.Insert("test2")
+	testHashTable.Insert("test3")
+	testHashTable.Insert("test4")
+	found := testHashTable.Search("test")
+	testHashTable.Delete("test")
+	fmt.Println(testHashTable, found)
 
 }
