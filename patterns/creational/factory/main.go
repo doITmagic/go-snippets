@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-// IGun is an interface, defines all methods a gun should have
+// Pistoler is an interface, defines all methods a gun should have
 type Pistoler interface {
 	setName(name string)
 	setPower(power int)
@@ -14,7 +14,7 @@ type Pistoler interface {
 
 /***************************************************************************************/
 
-// Gun is a struct that implements IGun interface
+// Pistol is a struct that implements IGun interface
 type Pistol struct {
 	name  string
 	power int
@@ -72,12 +72,22 @@ func NewColt() Pistoler {
 
 /***************************************************************************************/
 
+func getGun(gunType string) (Pistoler, error) {
+	if gunType == "beretta" {
+		return NewBeretta(), nil
+	}
+	if gunType == "colt" {
+		return NewColt(), nil
+	}
+	return nil, fmt.Errorf("wrong gun type passed")
+}
+
 func main() {
-	beretta := NewBeretta()
+	beretta, _ := getGun("beretta")
 	fmt.Printf("Name: %s\n", beretta.getName())
 	fmt.Printf("Power: %d\n", beretta.getPower())
 
-	colt := NewColt()
+	colt, _ := getGun("colt")
 	fmt.Printf("Name: %s\n", colt.getName())
 	fmt.Printf("Power: %d\n", colt.getPower())
 }
