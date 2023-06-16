@@ -72,7 +72,7 @@ func NewColt() Pistoler {
 
 /***************************************************************************************/
 
-func getGun(gunType string) (Pistoler, error) {
+func getPistol(gunType string) (Pistoler, error) {
 	if gunType == "beretta" {
 		return NewBeretta(), nil
 	}
@@ -83,11 +83,11 @@ func getGun(gunType string) (Pistoler, error) {
 }
 
 func main() {
-	beretta, _ := getGun("beretta")
+	beretta, _ := getPistol("beretta")
 	fmt.Printf("Name: %s\n", beretta.getName())
 	fmt.Printf("Power: %d\n", beretta.getPower())
 
-	colt, _ := getGun("colt")
+	colt, _ := getPistol("colt")
 	fmt.Printf("Name: %s\n", colt.getName())
 	fmt.Printf("Power: %d\n", colt.getPower())
 }

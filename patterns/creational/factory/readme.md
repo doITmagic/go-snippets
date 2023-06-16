@@ -9,7 +9,7 @@ First, we create the Pistoler interface, which defines all methods a Pistol shou
 Second we create the Pistol struct, which implements the Pistoler interface.
 Third we create 2 concrete types of Pistols, the Beretta and the Colt, both of which embed the Pistol struct and indirectly implement all Pistol method.
 
-Finally, we create getGun() function, which acts as a factory for creating different types of Pistols by taking a string parameter 
+Finally, we create getPistol() function, which acts as a factory for creating different types of Pistols by taking a string parameter 
 and returning a Pistoler interface.
 
 
