@@ -138,17 +138,39 @@ func main() {
 			}
 		} `
 
+	querySecond := `
+		{
+			tutorials(id:1) {
+				Title
+				Author {
+					Name
+					Tutorials
+				}
+			}
+		} `
+
 	//Query execution
 	params := graphql.Params{Schema: schema, RequestString: query}
 	r := graphql.Do(params)
 	if len(r.Errors) > 0 {
 		fmt.Printf("Failed to execute graphql operation, errors: %+v", r.Errors)
 	}
-	//Query result
 	rJSON, err := json.Marshal(r)
 	if err != nil {
 		panic(err)
 	}
 	fmt.Printf("%s \n", rJSON)
+
+	paramsSecond := graphql.Params{Schema: schema, RequestString: querySecond}
+	rSecond := graphql.Do(paramsSecond)
+	if len(r.Errors) > 0 {
+		fmt.Printf("Failed to execute graphql operation, errors: %+v", r.Errors)
+	}
+	//Query result
+	rSecondJSON, err := json.Marshal(rSecond)
+	if err != nil {
+		panic(err)
+	}
+	fmt.Printf("%s \n", rSecondJSON)
 
 }
