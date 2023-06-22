@@ -12,5 +12,8 @@ Go language snippets
           - singleton
     2. Messaging
           - fan out
-5. prepend - because it din't exist let's let's add it :joy:
-6. brodcast one event to multiples
+    3.Structural
+          - decorator
+5. prepend : because it didn't exist let's let's add it :joy:
+6. broadcast : one event to multiples
+7. 
