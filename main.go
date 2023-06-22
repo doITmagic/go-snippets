@@ -2,33 +2,38 @@ package main
 
 import (
 	"fmt"
+	"os"
+	"time"
 
 	"github.com/doITmagic/go-snippets/broadcast"
+	"github.com/doITmagic/go-snippets/hashtable"
+	"github.com/doITmagic/go-snippets/logger"
 	"github.com/doITmagic/go-snippets/patterns/messaging/fanOut"
+	"github.com/doITmagic/go-snippets/patterns/structural/decorator"
 	"github.com/doITmagic/go-snippets/prepend"
 )
 
 func main() {
-	////using logger package
-	//myLogger := logger.NewLogger(os.Stdout, 10)
-	//defer myLogger.Close()
+	//using logger package
+	myLogger := logger.NewLogger(os.Stdout, 10)
+	defer myLogger.Close()
+
+	for i := 0; i < 10; i++ {
+		myLogger.Log(fmt.Sprintf("Hello %d", i))
+		time.Sleep(100 * time.Millisecond)
+	}
 	//
-	//for i := 0; i < 10; i++ {
-	//	myLogger.Log(fmt.Sprintf("Hello %d", i))
-	//	time.Sleep(100 * time.Millisecond)
-	//}
-	//
-	////using hashtable package
-	//testHashTable := hashtable.InitHashTable()
-	//testHashTable.Insert("test")
-	//testHashTable.Insert("test1")
-	//testHashTable.Insert("test1")
-	//testHashTable.Insert("test2")
-	//testHashTable.Insert("test3")
-	//testHashTable.Insert("test4")
-	//found := testHashTable.Search("test")
-	//testHashTable.Delete("test")
-	//fmt.Println(testHashTable, found)
+	//using hashtable package
+	testHashTable := hashtable.InitHashTable()
+	testHashTable.Insert("test")
+	testHashTable.Insert("test1")
+	testHashTable.Insert("test1")
+	testHashTable.Insert("test2")
+	testHashTable.Insert("test3")
+	testHashTable.Insert("test4")
+	found := testHashTable.Search("test")
+	testHashTable.Delete("test")
+	fmt.Println(testHashTable, found)
 
 	//using broadcast package
 	broadcast.Broadcast_Example()
@@ -42,5 +47,8 @@ func main() {
 	s = mySlice.Prepend(1, s)
 	s = append(s, 11)
 	fmt.Println(s)
+
+	//using decorator package
+	decorator.Example()
 
 }
