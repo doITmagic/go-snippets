@@ -1,7 +1,11 @@
 package main
 
 import (
+	"fmt"
+
 	"github.com/doITmagic/go-snippets/broadcast"
+	"github.com/doITmagic/go-snippets/patterns/messaging/fanOut"
+	"github.com/doITmagic/go-snippets/prepend"
 )
 
 func main() {
@@ -26,6 +30,17 @@ func main() {
 	//testHashTable.Delete("test")
 	//fmt.Println(testHashTable, found)
 
+	//using broadcast package
 	broadcast.Broadcast_Example()
+
+	//using fanOut package
+	fanOut.Example()
+
+	//using prepend package
+	s := []interface{}{2, 3, 4}
+	var mySlice prepend.Prepender
+	s = mySlice.Prepend(1, s)
+	s = append(s, 11)
+	fmt.Println(s)
 
 }
