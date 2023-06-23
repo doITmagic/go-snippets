@@ -13,8 +13,8 @@ func receive(ch <-chan interface{}, wg *sync.WaitGroup) {
 	fmt.Println("Received:", value)
 }
 
-// Example /* Create un example for the use of broadcast package */
-func Broadcast_Example() {
+// ExampleBroadcast Create un example for the use of broadcast package
+func ExampleBroadcast() {
 	b := NewBroadcaster()
 
 	var wg sync.WaitGroup

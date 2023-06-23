@@ -14,6 +14,5 @@ Go language snippets
           - fan out
     3.Structural
           - decorator
-5. prepend : because it didn't exist let's let's add it :joy:
-6. broadcast : one event to multiples
-7. 
+5. prepend : because it didn't exist let's add it :joy:
+6. broadcast : one event to multiples channels
