@@ -16,3 +16,4 @@ Go language snippets
           - decorator
 5. prepend : because it didn't exist let's add it :joy:
 6. broadcast : one event to multiples channels
+7. detectClosedChannel : detect if a channel is closed, and we can write to it
