@@ -11,6 +11,7 @@ import (
 	"github.com/doITmagic/go-snippets/patterns/messaging/fanOut"
 	"github.com/doITmagic/go-snippets/patterns/structural/decorator"
 	"github.com/doITmagic/go-snippets/prepend"
+	slicesexp "github.com/doITmagic/go-snippets/slices"
 )
 
 func main() {
@@ -36,7 +37,7 @@ func main() {
 	fmt.Println(testHashTable, found)
 
 	//using broadcast package
-	broadcast.Broadcast_Example()
+	broadcast.ExampleBroadcast()
 
 	//using fanOut package
 	fanOut.Example()
@@ -50,5 +51,8 @@ func main() {
 
 	//using decorator package
 	decorator.Example()
+
+	//slice tricks with experimental packages
+	slicesexp.Example()
 
 }
