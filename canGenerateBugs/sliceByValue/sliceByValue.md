@@ -1,4 +1,4 @@
-## What is happening if we use a slice like parameters in a functionsen, ding it by value?
+## What is happening if we use a slice like parameters in a function, sending it by value? It will be changed?
   Let's see an example:
   ```go
   package main
