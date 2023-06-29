@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/doITmagic/go-snippets/errors"
+	"github.com/doITmagic/go-snippets/slices"
 )
 
 func main() {
@@ -54,8 +54,18 @@ func main() {
 
 	//fmt.Errorf("error 6: %w", err5)
 	//fmt.Println(errorsWrap.Unwrap(err6))
-	customError1 := errors.New("second custom error")
+	//customError1 := errors.New("second custom error")
 
-	fmt.Println(errors.StackTrace(customError1))
+	//fmt.Println(errors.StackTrace(customError1))
+
+	first := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
+	second := first[2:6]
+	third := []int{10, 11, 12, 13, 15}
+	//check if the first slice is a subset of the second slice
+	//and have the same underlying array
+	underlying := slices.SameUnderlying(first, second)
+	fmt.Printf("first slice %v is a subset of the second slice %v and have the same underlying array : %v \n", first, second, underlying)
+	underlyingTwo := slices.SameUnderlying(first, third)
+	fmt.Printf("first slice %v is a subset of the second slice %v and have the same underlying array : %v \n", first, third, underlyingTwo)
 
 }
