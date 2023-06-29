@@ -27,3 +27,21 @@ func ExampleSameUnderlying() {
 	//slices forth and fifth have same underlying array: true
 
 }
+
+// ExampleIsSubset an example test case
+func ExampleIsSubset() {
+	//create two slices
+	first := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
+	second := first[2:6]
+
+	//check if the one of slice is a subset of another slice
+	subset := IsSubset(first, second)
+	fmt.Println("first slice is a subset of the second slice:", subset)
+	//change the order of slices as the function is commutative
+	subsetTwo := IsSubset(second, first)
+	fmt.Println("first slice is a subset of the second slice:", subsetTwo)
+	// Output:
+	// first slice is a subset of the second slice: true
+	// first slice is a subset of the second slice: true
+
+}
