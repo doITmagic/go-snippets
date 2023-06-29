@@ -19,3 +19,4 @@ Go language snippets
 7. detectClosedChannel : detect if a channel is closed, and we can write to it
 8. slice tricks with experimental packages
 9. What is happening if we use a slice like parameters in a function, sending it by value? It will be changed? The response is here https://github.com/doITmagic/go-snippets/blob/main/canGenerateBugs/sliceByValue/sliceByValue.md
+10. Slices package : one function slices.SameUnderlying(...) that test if two slices (any types) have the same underlying array using generics
